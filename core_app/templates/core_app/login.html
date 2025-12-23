@@ -1,0 +1,22 @@
+{% extends 'core_app/base.html' %}
+{% block content %}
+
+<div class="auth-card">
+    <h1>Log in</h1>
+
+    <form method="post" class="auth-form">
+        {% csrf_token %}
+        {{ form }}
+
+        <button type="submit" class="btn btn-primary auth-btn">
+            Log in
+        </button>
+    </form>
+
+    <p class="auth-footer">
+        Don’t have an account?
+        <a href="{% url 'register_view' %}">Sign up</a>
+    </p>
+</div>
+
+{% endblock %}
